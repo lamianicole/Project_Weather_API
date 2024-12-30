@@ -1,0 +1,182 @@
+/* generelles styling */
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url("/public/fonts/Roboto-Thin.ttf")
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Roboto-Thin';
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    background-image: url('/public/img/jan-huber-aRC-u-Xwoys-unsplash.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* searchbar */
+.searchbar {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: transparent;
+    padding: 20px; 
+    width: 100%; 
+    max-width: 400px; 
+    margin: 0 auto; 
+}
+
+.searchbar input {
+    background: transparent; 
+    border: none; 
+    border-bottom: 2px solid #253b26; 
+    outline: none; 
+    padding: 8px 12px; 
+    font-size: 2rem; 
+    color: #253b26; 
+    width: 80%; 
+    transition: border-color 0.3s ease; 
+}
+
+.searchbar input:focus {
+    border-bottom: 2px solid #253b26; 
+}
+
+.searchbar input:hover {
+    border-bottom: 2px solid #888; 
+}
+
+.searchbar button {
+    background-color: transparent; 
+    color: #253b26; 
+    border: none; 
+    font-size: 2rem; 
+    cursor: pointer; 
+    padding: 8px 16px; 
+    transition: color 0.3s ease; 
+}
+
+.searchbar button:hover {
+    color: #253b26;
+}
+
+/* Weather Card */
+.weather-card {
+    background-color: rgba(169, 169, 169, 0.2); 
+    color: #fff; 
+    border-radius: 15px; 
+    padding: 20px; 
+    max-width: 800px; 
+    margin: 30px auto; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px); 
+}
+
+.weather-card > div {
+    width: 100%;
+    text-align: center;
+}
+
+.weather-card h1, .weather-card h2 {
+    margin: 10px 0;
+}
+
+.weather-card p {
+    font-size: 1.6rem;
+    margin: 5px 0;
+}
+
+.weather-card .weather-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.weather-card .weather-info p {
+    flex: 1 1 45%; 
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.sunrise-sunset p {
+    font-size: 14px;
+    margin: 5px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.searchbar + .weather-card {
+    margin-top: 30px; 
+}
+
+.weather-card .weather-info p:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    cursor: pointer;
+}
+
+/* temperature */
+
+
+.weather-card h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 10px; /* Abstand zum darunterliegenden Element */
+    position: relative;
+}
+
+.weather-card h2::after {
+    content: '';
+    display: block;
+    width: 20%; /* 1/5 der Breite */
+    height: 1px; /* Höhe der feinen Linie */
+    background-color: white; /* Farbe der Linie */
+    margin: 10px auto 0; /* Abstand und zentrierung */
+    position: absolute;
+    left: 40%; /* Positionierung der Linie (zentriert) */
+    bottom: -10px; /* Unterschied zur Überschrift */
+}
+
+.weather-card h1 {
+    font-size: 8rem;
+    margin-bottom: 10px; /* Abstand zum darunterliegenden Element */
+    position: relative;
+}
+
+.weather-card h1::after {
+    content: '';
+    display: block;
+    width: 20%; /* 1/5 der Breite */
+    height: 1px; /* Höhe der feinen Linie */
+    background-color: white; /* Farbe der Linie */
+    margin: 10px auto 0; /* Abstand und zentrierung */
+    position: absolute;
+    left: 40%; /* Positionierung der Linie (zentriert) */
+    bottom: -10px; /* Unterschied zur Überschrift */
+}
+
+
+
+/* info */
+h3 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 600;
+}
