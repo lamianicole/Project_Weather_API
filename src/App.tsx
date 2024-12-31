@@ -55,6 +55,7 @@ function App() {
     case '50d': case '50n': return '/src/assets/icons/fog.png'; 
     default: return '/src/assets/icons/thermometer.png'; } };
 
+console.log(search);
 
   return (
     <section>
