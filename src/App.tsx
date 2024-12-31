@@ -56,6 +56,7 @@ function App() {
     case '50d': case '50n': return '/src/assets/icons/fog.png'; 
     default: return '/src/assets/icons/thermometer.png'; } };
 
+
   return (
     <section>
       {/* searchbar: input city + button */}
@@ -65,37 +66,37 @@ function App() {
         <button onClick={getLocation}>Search</button>
       </div>
 
-      {/* weather card */}
-      {weatherData && (
-      <article className="weather-card">
-        <div>
-          <h2>{location?.name}</h2>
-          {/* in einer Zeile, h2: Uhrzeit, Datum */}
-          <h1>{weatherData?.main.temp.toFixed(0)}°</h1>
-        </div>
+      {/* Introduction text or weather card */}
+      {weatherData ? (
+        <article className="weather-card">
+          <div>
+            <h2>{location?.name}</h2>
+            <h1>{weatherData.main.temp.toFixed(0)}°</h1>
+          </div>
 
-        <div>
-          {weatherData?.weather.map((weatherInfo, index) => (
-            <div>
-            <div key={index}>
-              <h3>{weatherInfo.main}</h3>
+          <div className="weather-info">
+    {weatherData.weather.map((weatherInfo, index) => (
+        <div key={index} className="weather-detail">
+            <div className="vertical-text">
+                <h3>{weatherInfo.main}</h3>
             </div>
-            <div>
-              <img src={getWeatherIcon(weatherInfo.icon)} alt={weatherInfo.description} />
-            </div>
-            </div>
-          ))}
+            <img src={getWeatherIcon(weatherInfo.icon)} alt={weatherInfo.description} />
         </div>
+    ))}
+</div>
 
-  
-        <div className='sunrise-sunset'>
-          <p>Sunrise {weatherData?.sys.sunrise && formatTime(weatherData.sys.sunrise)} am</p>
-          <p>Sunset {weatherData?.sys.sunset && formatTime(weatherData.sys.sunset)} pm</p>
+          <div className='sunrise-sunset'>
+            <p>Sunrise {weatherData.sys.sunrise && formatTime(weatherData.sys.sunrise)} am</p>
+            <p>Sunset {weatherData.sys.sunset && formatTime(weatherData.sys.sunset)} pm</p>
+          </div>
+        </article>
+      ) : (
+        <div className="intro-text">
+          <h4>Daily Weather Service</h4>
         </div>
-      </article>
       )}
-    </section>   
-  )
+    </section>
+  );
 }
 
 export default App;
