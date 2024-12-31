@@ -19,7 +19,7 @@ function App() {
   const [location, setLocation]=useState<ILocation | null>(null)
 
   const getLocation = () => {
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${search}&appid=${apiKey}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${search}&appid=${apiKey}`)
     .then(response => response.json())
     .then(data => setLocation(data[0]));
   }  
