@@ -43,17 +43,17 @@ function App() {
 
 
   const getWeatherIcon = (iconCode: string) => { switch(iconCode) { 
-    case '01d': return '/src/assets/icons/sun.png'; 
-    case '01n': return '/src/assets/icons/night.png'; 
-    case '02d': case '02n': return '/src/assets/icons/cloud.png';
-    case '03d': case '03n': return '/src/assets/icons/cloud.png';
-    case '04d': case '04n': return '/src/assets/icons/cloud.png';
-    case '09d': case '09n': return '/src/assets/icons/rain.png'; 
-    case '10d': case '10n': return '/src/assets/icons/rain.png'; 
-    case '11d': case '11n': return '/src/assets/icons/wind.png'; 
-    case '13d': case '13n': return '/src/assets/icons/frost.png'; 
-    case '50d': case '50n': return '/src/assets/icons/fog.png'; 
-    default: return '/src/assets/icons/thermometer.png'; } };
+    case '01d': return '/icons/sun.png'; 
+    case '01n': return '/icons/night.png'; 
+    case '02d': case '02n': return '/icons/cloud.png';
+    case '03d': case '03n': return '/icons/cloud.png';
+    case '04d': case '04n': return '/icons/cloud.png';
+    case '09d': case '09n': return '/icons/rain.png'; 
+    case '10d': case '10n': return '/icons/rain.png'; 
+    case '11d': case '11n': return '/icons/wind.png'; 
+    case '13d': case '13n': return '/icons/frost.png'; 
+    case '50d': case '50n': return '/icons/fog.png'; 
+    default: return '/icons/thermometer.png'; } };
 
 console.log(search);
 
