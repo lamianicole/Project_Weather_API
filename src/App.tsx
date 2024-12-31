@@ -3,7 +3,6 @@ import './App.css'
 import IWeather from '../interfaces/IWeather';
 import ILocation from '../interfaces/ILocation';
 
-
 // const apiLink = import.meta.env.VITE_API_LINK
 const apiKey = import.meta.env.VITE_API_KEY
 
