@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+**Weather App**
+This React-based weather application provides current weather data for cities around the world. By entering a city name, users receive an immediate overview of the current weather, including temperature, weather conditions, and sunrise/sunset times.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+*Features*
+- Search for any city worldwide
+- Display current temperature, weather conditions, and weather icons
+- Show sunrise and sunset times
+- Error handling for better user experience
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+*Technologies Used*
+- React
+- TypeScript
+- CSS
+- OpenWeatherMap API
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+*Code Overview*
+App.tsx – The main component of the application, responsible for fetching and displaying weather data. 
+Key functions include:
+- getLocation(): Fetches latitude and longitude for the searched city.
+- useEffect(): Fetches weather data based on the obtained latitude and longitude.
+- formatTime(): Converts Unix timestamp to readable time format.
+- getWeatherIcon(): Returns the appropriate weather icon based on the weather condition code.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+App.css – Contains the styles for the application, ensuring a visually appealing and responsive design that is deliberately streamlined and minimalistic to convey a calm, uncluttered atmosphere.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+*Usage*
+Enter the name of a city in the search bar and click the "Search" button.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+The app will fetch and display the current weather data for the specified city, including temperature, weather conditions, and weather icons.
+
+Sunrise and sunset times for the city are also shown.
+
+
+*Link to App & Preview*
+To the App: https://daily-weather-forecast-react.netlify.app/
+
+![screenshot](.img/weather-app-preview.png)
